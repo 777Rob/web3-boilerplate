@@ -18,7 +18,7 @@ const client = createClient(
   getDefaultClient({
     autoConnect: true,
     alchemyId: process.env.REACT_APP_ALCHEMY_KEY,
-    chains: [chain.polygonMumbai, chain.localhost],
+    chains: [chain.polygonMumbai, chain.localhost, chain.hardhat],
   })
 );
 

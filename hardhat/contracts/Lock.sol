@@ -32,6 +32,8 @@ contract Lock {
             msg.sender,
             lastId
         );
+
+        console.log(lock.balance);
         locks[lastId] = lock;
         addressLocks[msg.sender].push(lastId);
         lastId++;

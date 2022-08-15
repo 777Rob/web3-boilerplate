@@ -5,6 +5,9 @@ import { useEffect } from "react";
 import { themeChange } from "theme-change";
 import { createClient, WagmiConfig, chain } from "wagmi";
 import "./App.css";
+import Tabs from "components/Tabs";
+import { useState } from "react";
+
 import "./index.css";
 if (!window.Buffer) window.Buffer = Buffer;
 const client = createClient(
@@ -28,6 +31,7 @@ function App() {
       <ConnectKitProvider>
         <div className="flex justify-center">
           <Navbar />
+          <Tabs />
         </div>
       </ConnectKitProvider>
     </WagmiConfig>

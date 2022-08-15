@@ -1,7 +1,7 @@
 import React from "react";
 import { Close } from "assets/icons";
 import { Settings, ArrowDown } from "assets/icons";
-import { LockContract } from "contracts/Lock";
+import { LockContract } from "contracts";
 import {
   useAccount,
   useBalance,

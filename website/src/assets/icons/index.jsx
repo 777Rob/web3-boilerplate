@@ -15,11 +15,13 @@ import Menu from "./Menu";
 import MenuCircles from "./MenuCircles";
 import Minus from "./Minus";
 import Plus from "./Plus";
+import Options from "./Options";
 export {
   MenuCircles,
   ArrowLeft,
   ArrowRight,
   ArrowUp,
+  Options,
   ArrowDown,
   Boomark,
   Close,

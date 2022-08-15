@@ -1,5 +1,5 @@
 const fs = require("fs");
-const hre = require("hardhat");
+
 function copyFile(source, target, cb) {
   var cbCalled = false;
 

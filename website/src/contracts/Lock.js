@@ -4,6 +4,6 @@ import Lock from "./hardhat/Lock.json";
 // To deploy contracts on a local hardhat network and update details run: npm run setup-localhost
 
 export let LockContract = {
-  addressOrName: "0x68B1D87F95878fE05B998F19b66F4baba5De1aed",
+  addressOrName: "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
   contractInterface: Lock.abi,
 };

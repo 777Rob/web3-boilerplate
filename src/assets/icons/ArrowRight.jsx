@@ -3,7 +3,7 @@ import React from "react";
 export default function ArrowRight({ fill, size, color, props }) {
   return (
     <svg
-      width={width ? width : "32"}
+      width={size ? size : "32"}
       height={size ? size : "32"}
       {...props}
       viewBox="0 0 32 32"

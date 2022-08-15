@@ -14,16 +14,16 @@ export default function Plus({ fill, size, color, className, props }) {
       <path
         d="M5 16H27"
         stroke={color ? color : "#49536E"}
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16 5V27"
         stroke={color ? color : "#49536E"}
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

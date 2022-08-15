@@ -7,8 +7,10 @@ import { createClient, WagmiConfig, chain } from "wagmi";
 import "./App.css";
 import Tabs from "components/Tabs";
 import { useState } from "react";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+import Home from "pages/Home";
+
 if (!window.Buffer) window.Buffer = Buffer;
 const client = createClient(
   getDefaultClient({
@@ -29,10 +31,12 @@ function App() {
   return (
     <WagmiConfig client={client}>
       <ConnectKitProvider>
-        <div className="flex justify-center">
+        <BrowserRouter>
           <Navbar />
-          <Tabs />
-        </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
       </ConnectKitProvider>
     </WagmiConfig>
   );

@@ -4,6 +4,7 @@ export default function Star({ fill, size, color, className }) {
   return (
     <svg
       width={size ? size : "32"}
+      className={className}
       height={size ? size : "32"}
       className={className}
       viewBox="0 0 24 24"

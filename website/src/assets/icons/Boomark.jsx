@@ -4,6 +4,7 @@ export default function Boomark({ size, color, props }) {
   return (
     <svg
       width={size ? size : "32"}
+      className={className}
       height={size ? size : "32"}
       {...props}
       viewBox="0 0 32 32"

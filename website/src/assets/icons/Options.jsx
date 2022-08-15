@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Options({ fill, size, color, props }) {
+export default function Options({ fill, size, color, className, props }) {
   return (
     <>
       <svg

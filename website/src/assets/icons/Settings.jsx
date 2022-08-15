@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function Settings({ fill, size, color, props }) {
+export default function Settings({ fill, size, color, className, props }) {
   return (
     <svg
       width={size ? size : "32"}
+      className={className}
       height={size ? size : "32"}
       {...props}
       viewBox="0 0 32 32"

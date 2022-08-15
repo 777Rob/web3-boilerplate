@@ -12,36 +12,6 @@ export default function Home() {
           <p className="font-semibold text-xs">Swap</p>
           <Settings className="cursor-pointer" size="18" />
         </div>
-        <div class="input-group">
-          <input
-            type="text"
-            placeholder="Search…"
-            class="input input-bordered"
-          />
-          <select class="select select-bordered">
-            <option disabled selected>
-              Pick token <ArrowDown size="12" />
-            </option>
-            <option>T-shirts</option>
-            <option>Mugs</option>
-          </select>
-        </div>
-        <ArrowDown className="snap-center self-center " size="20" />
-        <div class="input-group">
-          <input
-            type="text"
-            placeholder="Search…"
-            class="input input-bordered"
-          />
-          <select class="select select-bordered">
-            <option disabled selected>
-              Pick token <ArrowDown size="12" />
-            </option>
-            <option>T-shirts</option>
-            <option>Mugs</option>
-          </select>
-        </div>
-        <button className="btn btn-primary">Swap</button>
       </div>
     </div>
   );

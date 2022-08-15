@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "update-contracts": "cd .. && cd ./hardhat &&npx hardhat clean && npx hardhat compile && npx hardhat run scripts/update-contracts.js",
     "node": "cd .. && cd ./hardhat && npx hardhat node",
-    "deploy-local": "cd .. && cd ./hardhat && npx hardhat run scripts/deploy.js --network localhost"
+    "deploy-local": "cd .. && cd ./hardhat && npx hardhat run scripts/deploy.js --network localhost",
+    "setup-local": "cd .. && cd ./hardhat &&npx hardhat clean && npx hardhat compile && npx hardhat run scripts/update-contracts.js && npx hardhat run scripts/deploy.js --network localhost"
   },
   "eslintConfig": {
     "extends": [

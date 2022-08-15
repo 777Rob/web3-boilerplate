@@ -3,9 +3,9 @@ import React from "react";
 export default function Close({ fill, size, color, props }) {
   return (
     <svg
+      {...props}
       width={size ? size : "32"}
       height={size ? size : "32"}
-      {...props}
       viewBox="0 0 32 32"
       fill={fill ? fill : "none"}
       xmlns="http://www.w3.org/2000/svg"

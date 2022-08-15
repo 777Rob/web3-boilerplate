@@ -3,18 +3,18 @@ import "./App.css";
 import { Star } from "assets/icons";
 import Input from "components/Input";
 import { useState } from "react";
+import Button from "components/Button";
+import Modal from "components/Modal";
 function App() {
-  const [value, setValue] = useState("");
-  console.log(value);
+  const [value, setValue] = useState(false);
   return (
     <div className="flex justify-center">
-      <Input
-        Icon={Star}
-        // value={value}
-        // setValue={setValue}
-        placeholder="test"
-        label="Star"
-      />
+      <Button warning onClick={() => setValue(!value)}>
+        Test
+      </Button>
+      <Modal open={value} setOpen={setValue}>
+        Test
+      </Modal>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import Settings from "./Settings";
 import Account from "./Account";
 import Home from "./Home";
 import Star from "./Star";
+import Spinner from "./Spinner";
 import Menu from "./Menu";
 import MenuCircles from "./MenuCircles";
 import Minus from "./Minus";
@@ -24,6 +25,7 @@ export {
   Options,
   ArrowDown,
   Boomark,
+  Spinner,
   Close,
   Trash,
   Edit,

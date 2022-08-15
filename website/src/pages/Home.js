@@ -1,7 +1,12 @@
 import React from "react";
-import { Close } from "assets/icons";
-import { Settings, ArrowDown } from "assets/icons";
+import { Settings } from "assets/icons";
+import { useAccount } from "wagmi";
+import { Spinner } from "assets/icons";
+import ConnectButton from "components/ConnectButton";
+
 export default function Home() {
+  const { address, isConnecting, isDisconnected } = useAccount();
+
   return (
     <div className="card mt-12 w-96 shadow-xl bg-base-200 mx-auto">
       <div className="card-body">
@@ -10,19 +15,21 @@ export default function Home() {
           <Settings className="cursor-pointer" size="18" />
         </div>
         <div>
-          <label className="label ">
-            <span className="label-text">Enter amount</span>
+          <label className="label">
+            <span className="label-text">Enter Initial Deposit Amount</span>
           </label>
           <div className="input-group">
             <input
               type="text"
               placeholder="0.01"
-              className="input input-bordered"
+              className="input input-bordered flex flex-1"
             />
-            <span className="input input-bordered self-center">ETH</span>
+            <span className="input input-bordered">ETH</span>
           </div>
         </div>
-        <button className="btn btn-primary">Create lock</button>
+        <button className="btn btn-primary">
+          {isDisconnected ? <ConnectButton /> : "Create lock"}
+        </button>
       </div>
     </div>
   );

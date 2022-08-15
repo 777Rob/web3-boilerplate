@@ -1,8 +1,10 @@
+import { SnackbarProvider } from "notistack";
 import { Buffer } from "buffer";
 import Navbar from "./components/Navbar";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
+import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { createClient, WagmiConfig, chain } from "wagmi";
 import "./App.css";
 import Tabs from "components/Tabs";
@@ -21,7 +23,6 @@ const client = createClient(
     chains: [chain.polygonMumbai, chain.localhost, chain.hardhat],
   })
 );
-
 function App() {
   // https://github.com/saadeghi/theme-change
   useEffect(() => {
@@ -34,12 +35,14 @@ function App() {
     <WagmiConfig client={client}>
       <ConnectKitProvider>
         <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/locks" element={<Locks />} />
-            <Route path="/History" element={<History />} />
-          </Routes>
+          <SnackbarProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/locks" element={<Locks />} />
+              <Route path="/History" element={<History />} />
+            </Routes>
+          </SnackbarProvider>
         </BrowserRouter>
       </ConnectKitProvider>
     </WagmiConfig>

@@ -7,7 +7,7 @@ import { useState } from "react";
 import Modal from "components/Modal";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-
+import ThemeChange from "components/ThemeChange";
 function App() {
   // https://github.com/saadeghi/theme-change
   useEffect(() => {
@@ -18,18 +18,7 @@ function App() {
 
   return (
     <div className="flex justify-center">
-      <button class="btn">Button</button>
-      <button class="btn btn-primary">Button</button>
-      <button class="btn btn-secondary">Button</button>
-      <button class="btn btn-accent">Button</button>
-      <button class="btn btn-ghost">Button</button>
-      <button class="btn btn-link">Button</button>
-      <Modal open={value} setOpen={setValue}>
-        Test
-      </Modal>
-      <button data-set-theme="cupcake" data-act-class="ACTIVECLASS">
-        emerald
-      </button>
+      <ThemeChange />
     </div>
   );
 }

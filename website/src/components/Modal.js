@@ -1,5 +1,5 @@
-import React from "react";
 import { Close } from "assets/icons";
+import React from "react";
 
 export default function Modal({ open, setOpen, children }) {
   return (

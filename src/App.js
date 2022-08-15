@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Star } from "assets/icons";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Star size="50" />
           Learn React
         </a>
 

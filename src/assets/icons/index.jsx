@@ -11,7 +11,6 @@ import Settings from "./Settings";
 import Account from "./Account";
 import Home from "./Home";
 import Star from "./Star";
-import Minus from "./Minus";
 import Menu from "./Menu";
 import MenuCircles from "./MenuCircles";
 import Minus from "./Minus";
@@ -33,6 +32,5 @@ export {
   Star,
   Minus,
   Menu,
-  Minus,
   Plus,
 };

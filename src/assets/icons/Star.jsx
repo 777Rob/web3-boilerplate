@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Star({ fill, size, color, props }) {
+export default function Star({ fill, size, color, className }) {
   return (
     <svg
       width={size ? size : "32"}
       height={size ? size : "32"}
-      {...props}
+      className={className}
       viewBox="0 0 24 24"
       fill={fill ? fill : "none"}
       xmlns="http://www.w3.org/2000/svg"

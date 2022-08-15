@@ -6,7 +6,6 @@ export default function Star({ fill, size, color, className }) {
       width={size ? size : "32"}
       className={className}
       height={size ? size : "32"}
-      className={className}
       viewBox="0 0 24 24"
       fill={fill ? fill : "none"}
       xmlns="http://www.w3.org/2000/svg"

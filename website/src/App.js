@@ -1,5 +1,5 @@
 import { Buffer } from "buffer";
-import Navbar from "components/Navbar";
+import Navbar from "./components/Navbar";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";

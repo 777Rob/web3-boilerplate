@@ -1,6 +1,6 @@
-import { themes } from "data/themes";
+import { themes } from "../data/themes";
 import React from "react";
-import { Options } from "assets/icons";
+import { Options } from "../assets/icons";
 export default function ThemeChange() {
   let dropdownClassNames = "";
   let btnClassNames = "btn-ghost";

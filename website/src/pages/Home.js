@@ -6,6 +6,7 @@ import {
   useBalance,
   usePrepareContractWrite,
   useContractWrite,
+  useContractReads,
 } from "wagmi";
 import { Spinner } from "assets/icons";
 import ConnectButton from "components/ConnectButton";
@@ -18,12 +19,14 @@ export default function Home() {
   const [amount, setAmount] = useState(0);
 
   const { config } = usePrepareContractWrite({
-    addressOrName: Lock.address,
-    contractInterface: Lock.abi,
+    ...Lock,
     functionName: "createLock",
     overrides: {
       from: address,
       value: ethers.utils.parseEther(amount.toString()),
+    },
+    onSettled(data, error) {
+      console.log("Settled", { data, error });
     },
   });
   const { isLoading, isSuccess, write, status } = useContractWrite(config);

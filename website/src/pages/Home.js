@@ -10,7 +10,7 @@ import {
 } from "wagmi";
 import { Spinner } from "assets/icons";
 import ConnectButton from "components/ConnectButton";
-import { Lock } from "contracts/Lock";
+import { LockContract } from "contracts/Lock";
 export default function Home() {
   const { address, isDisconnected } = useAccount();
   const { data } = useBalance({
@@ -19,7 +19,7 @@ export default function Home() {
   const [amount, setAmount] = useState(0);
 
   const { config } = usePrepareContractWrite({
-    ...Lock,
+    ...LockContract,
     functionName: "createLock",
     overrides: {
       from: address,

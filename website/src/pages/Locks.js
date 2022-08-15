@@ -1,7 +1,7 @@
 import React from "react";
 import { Close } from "assets/icons";
 import { Settings, ArrowDown } from "assets/icons";
-import { Lock } from "contracts/Lock";
+import { LockContract } from "contracts/Lock";
 import {
   useAccount,
   useBalance,
@@ -16,19 +16,19 @@ export default function Locks() {
   const { data, isError, isLoading } = useContractReads({
     contracts: [
       {
-        ...Lock,
+        ...LockContract,
         functionName: "unlockTime",
       },
       {
-        ...Lock,
+        ...LockContract,
         functionName: "owner",
       },
       {
-        ...Lock,
+        ...LockContract,
         functionName: "lastId",
       },
       {
-        ...Lock,
+        ...LockContract,
         functionName: "addressLocks",
         args: [address],
       },

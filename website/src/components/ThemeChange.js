@@ -11,7 +11,7 @@ export default function ThemeChange() {
       className={`dropdown dropdown-end ${dropdownClassNames}`}
     >
       <div
-        tabindex="0"
+        tabIndex="0"
         className={`btn btn-sm gap-1 normal-case ${btnClassNames}`}
       >
         <Options />
@@ -19,12 +19,13 @@ export default function ThemeChange() {
       <div
         className={`dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl ${contentClassNames}`}
       >
-        <div className="grid grid-cols-1 gap-3 p-3" tabindex="0">
+        <div className="grid grid-cols-1 gap-3 p-3" tabIndex="0">
           {themes.map((theme) => (
             <div
               className="outline-base-content overflow-hidden rounded-lg outline outline-2 outline-offset-2"
               data-set-theme={theme.id}
-              data-act-className="outline"
+              key={theme.id}
+              data-act-classname="outline"
             >
               <div
                 data-theme={theme.id}

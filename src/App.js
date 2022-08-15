@@ -8,6 +8,7 @@ import Modal from "components/Modal";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
 import ThemeChange from "components/ThemeChange";
+import Navbar from "components/Navbar";
 function App() {
   // https://github.com/saadeghi/theme-change
   useEffect(() => {
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="flex justify-center">
-      <ThemeChange />
+      <Navbar />
     </div>
   );
 }

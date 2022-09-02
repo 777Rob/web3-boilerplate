@@ -12,8 +12,9 @@ import {
 import { ethers } from "ethers";
 
 export default function Locks() {
-  const { address, isDisconnected } = useAccount();
-  const { data, isError, isLoading } = useContractReads({
+  const { address } = useAccount();
+
+  const { data } = useContractReads({
     contracts: [
       {
         ...LockContract,
@@ -34,6 +35,7 @@ export default function Locks() {
       },
     ],
   });
+
   return (
     <div
       className="card mt-12 w-96 shadow-xl bg-base-300

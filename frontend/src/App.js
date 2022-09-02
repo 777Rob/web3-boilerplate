@@ -7,8 +7,6 @@ import { themeChange } from "theme-change";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { createClient, WagmiConfig, chain } from "wagmi";
 import "./App.css";
-import Tabs from "components/Tabs";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Home from "pages/Home";
@@ -30,7 +28,7 @@ function App() {
     // 👆 false parameter is required for react project
   }, []);
   // const API_KEY = process.env.REACT_APP_ALCHEMY_API_KEY | "";
-  console.log(process.env.REACT_APP_ALCHEMY_KEY);
+
   return (
     <WagmiConfig client={client}>
       <ConnectKitProvider>

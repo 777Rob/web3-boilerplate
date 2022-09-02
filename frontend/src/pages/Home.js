@@ -1,77 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ethers } from "ethers";
 import { Settings } from "assets/icons";
 import {
   useAccount,
   useBalance,
   usePrepareContractWrite,
-  useContractWrite,
   useContractReads,
 } from "wagmi";
-import { Search } from "assets/icons";
-import { useNavigate } from "react-router-dom";
-import { Spinner } from "assets/icons";
-import ConnectButton from "components/ConnectButton";
 import { LockContract } from "contracts/Lock";
-import LoadingButton from "components/LoadingButton";
-import { useSnackbar } from "notistack";
-import { shortenTransactionHash } from "utils/utils";
+import { CreateLockButton } from "components/CreateLockButton";
 
-function CreateLockButton({ config }) {
-  let { isLoading, isSuccess, write, data, isError, error } =
-    useContractWrite(config);
-  let { address, isDisconnected } = useAccount();
-  let { enqueueSnackbar } = useSnackbar();
-  // let {} = useSnackbar();
-  let navigate = useNavigate();
-
-  useEffect(() => {
-    if (isSuccess) {
-      const action = (snackbarId) => (
-        <a
-          className="btn btn-outline btn-info btn-sm"
-          href={`https://mumbai.polygonscan.com/tx/${data.hash}`}
-        >
-          <div
-            class="tooltip hover:tooltip-open tooltip-info"
-            data-tip="Open transaction in block explorer"
-          >
-            <Search size="24" />
-          </div>
-        </a>
-      );
-
-      enqueueSnackbar(
-        <div className="text-xs w-24">
-          Lock created <br /> Tx :{shortenTransactionHash(data.hash)}
-        </div>,
-        {
-          variant: "success",
-          action,
-        }
-      );
-    }
-    if (isError) {
-      enqueueSnackbar("error \n" + error.message, {
-        variant: "error",
-      });
-    }
-  }, [isSuccess, enqueueSnackbar, isError]);
-
-  return isDisconnected ? (
-    <ConnectButton className="btn btn-primary" />
-  ) : (
-    <button
-      disabled={!write | isDisconnected}
-      onClick={() => write()}
-      className="btn btn-primary"
-    >
-      Create lock
-    </button>
-  );
-}
 export default function Home() {
-  let { address, isDisconnected } = useAccount();
+  let { address } = useAccount();
   let { data } = useBalance({
     addressOrName: address,
   });
@@ -79,30 +19,18 @@ export default function Home() {
 
   let { config } = usePrepareContractWrite({
     ...LockContract,
-    onError: (e) => {
-      console.log(e);
-    },
     functionName: "createLock",
-    onSettled: (tx) => {
-      console.log(tx);
-    },
-    onSuccess: (tx) => {
-      console.log(tx.hash);
-    },
-
     overrides: {
       from: address,
       value: ethers.utils.parseEther(amount.toString()),
     },
   });
 
-  // let { isLoading, isSuccess, write, data } = useContractWrite(config);
-
   return (
-    <div className="card mt-12 w-96 shadow-xl bg-base-200 mx-auto">
+    <div className="card mt-12 w-1/4 shadow-xl bg-base-200 mx-auto">
       <div className="card-body">
         <div className="flex text-sm justify-between items-center">
-          <p className="font-semibold text-xs">Create Lock</p>
+          <p className="font-semibold text-lg">Create Lock</p>
           <Settings className="cursor-pointer" size="18" />
         </div>
         <div>

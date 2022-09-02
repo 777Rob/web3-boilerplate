@@ -1,23 +1,15 @@
 import { themes } from "../data/themes";
 import React from "react";
 import { Options } from "../assets/icons";
+
 export default function ThemeChange() {
-  let dropdownClassNames = "";
-  let btnClassNames = "btn-ghost";
-  let contentClassNames = "mt-8";
   return (
-    <div
-      title="Change Theme"
-      className={`dropdown dropdown-end ${dropdownClassNames}`}
-    >
-      <div
-        tabIndex="0"
-        className={`btn btn-sm gap-1 normal-case ${btnClassNames}`}
-      >
+    <div title="Change Theme" className={`dropdown dropdown-end `}>
+      <div tabIndex="0" className="btn btn-ghost gap-1 normal-case">
         <Options />
       </div>
       <div
-        className={`dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl ${contentClassNames}`}
+        className={`dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl mt-12`}
       >
         <div className="grid grid-cols-1 gap-3 p-3" tabIndex="0">
           {themes.map((theme) => (

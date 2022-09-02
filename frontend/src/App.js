@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { createClient, WagmiConfig, chain } from "wagmi";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

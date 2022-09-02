@@ -62,7 +62,6 @@ export default function Home() {
           </div>
         </div>
         <CreateLockButton config={config} />
-        {/* {isLoading ? <LoadingButton /> : <TestButton />} */}
       </div>
     </div>
   );

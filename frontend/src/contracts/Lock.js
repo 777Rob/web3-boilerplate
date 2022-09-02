@@ -1,3 +1,4 @@
+
 import Lock from "./hardhat/Lock.json";
 // To update hardhat contract details run: npm run update-contracts
 // To deploy contracts on a local hardhat network and update details run: npm run setup-localhost

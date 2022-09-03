@@ -6,7 +6,7 @@ export default function ConnectButton() {
     <ConnectKitButton.Custom>
       {({ isConnected, isConnecting, show, hide, address, ensName }) => {
         return (
-          <div onClick={show} className="btn btn-primary self-center">
+          <div onClick={show} className="btn btn-primary btn-sm  self-center">
             {isConnected
               ? ensName
                 ? ensName

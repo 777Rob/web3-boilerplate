@@ -9,8 +9,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Home from "pages/Home";
-import Locks from "pages/Locks";
-import History from "pages/History";
+import Footer from "components/Footer";
 
 if (!window.Buffer) window.Buffer = Buffer;
 const client = createClient(
@@ -36,9 +35,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/locks" element={<Locks />} />
-              <Route path="/History" element={<History />} />
             </Routes>
+            <Footer />
           </SnackbarProvider>
         </BrowserRouter>
       </ConnectKitProvider>
